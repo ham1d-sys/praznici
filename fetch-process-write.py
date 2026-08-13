@@ -4,15 +4,15 @@ Generate report of 🇧🇬 Holidays for current year.
 
 __version__ = "0.1.0"
 
-import os
-import logging
-from datetime import datetime as dt
 import csv
+import logging
+import os
+from datetime import datetime as dt
 
-from dotenv import load_dotenv
-import requests
-from requests.adapters import HTTPAdapter, Retry
 import flag
+import requests
+from dotenv import load_dotenv
+from requests.adapters import HTTPAdapter, Retry
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -38,7 +38,8 @@ def main():
     response = session.get(endpoint_url, params=params)
     status = response.status_code
     if status == 401:
-        logging.warning(f"Error: Code {status}. Missing or invalid api credentials. Ensure you have the API key from your Calendarific dashboard configured in `params`.")
+        logging.warning(
+            f"Error: Code {status}. Missing or invalid api credentials. Ensure you have the API key from your Calendarific dashboard configured in `params`.")
         return
     elif status == 429:
         logger.warning(f"Error: Code {status}. Too many requests. API limits reached.")
@@ -47,19 +48,23 @@ def main():
         logger.warning(f"Error: Code {status}. Unknown error, refer to https://calendarific.com/api-documentation.")
         return
     else:
-        logger.info(f"Response code: {status}. Fetched {flag.flag(params['country'])} {params['type']} holidays {params['year']}.")
+        logger.info(
+            f"Response code: {status}. Fetched {flag.flag(params['country'])} {params['type']} holidays {params['year']}.")
 
     # Process
     response_json = response.json()
     holidays = response_json["response"].get("holidays")
 
     if not holidays:
-        logger.info("No holidays matches your parameters. Try changing the 'country', 'year' and/or 'type' args in `params`.")
+        logger.info(
+            "No holidays matches your parameters. Try changing the 'country', 'year' and/or 'type' args in `params`.")
         return
 
     processed = []
     for i, holiday in enumerate(holidays, start=1):
-        processed.append({"Name": holiday["name"], "Description": holiday["description"], "ISO": holiday["date"]["iso"], "Primary type": holiday["primary_type"], "Additional type(s)": ", ".join([t for t in holiday["type"] if t != holiday["primary_type"]])})
+        processed.append({"Name": holiday["name"], "Description": holiday["description"], "ISO": holiday["date"]["iso"],
+                          "Primary type": holiday["primary_type"], "Additional type(s)": ", ".join(
+                [t for t in holiday["type"] if t != holiday["primary_type"]])})
     logger.info("Processed fetched holidays.")
 
     # Write
