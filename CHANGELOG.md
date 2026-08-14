@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.1.1] - 2026-08-14
+
+### Added
+- Tests.
+
+### Changed
+- Refactored the codebase into multiple modules.
+- Save generated reports to a dedicated reports folder instead of the current working directory.
+- Raise HTTPError.
+
 ## [0.1.0] - 2026-08-13
 
 ### Added
