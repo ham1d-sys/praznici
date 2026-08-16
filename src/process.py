@@ -1,6 +1,5 @@
-from typing import Dict, List
-
 import logging
+from typing import Dict, List
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(pathname)s - %(message)s")
 logger = logging.getLogger(__name__)

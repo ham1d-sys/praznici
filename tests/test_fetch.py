@@ -1,7 +1,8 @@
 import responses
 
-from run import ENDPOINT_URL, PARAMS
 from fetch import fetch_holidays
+from holidays import ENDPOINT_URL, PARAMS
+
 
 @responses.activate
 def test_fetch_holidays():
@@ -23,6 +24,3 @@ def test_fetch_holidays():
 
     holidays = fetch_holidays(ENDPOINT_URL, PARAMS)
     assert holidays == {"holidays": ["New Year", "Christmas"]}
-
-
-
