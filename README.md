@@ -42,7 +42,18 @@ pip install -r requirements.txt
 copy .env.example .env
 ```
 
-Add your Calendarific API key from the Calendarific dashboard to the .env file.
+**Add your Calendarific API key from the Calendarific dashboard to the .env file:**
+
+```bash
+# Windows
+notepad .env
+# Linux
+nano .env
+# MacOS
+open -a TextEdit .env
+# Others
+code .env # Requires VS Code installation and CLI tool setup
+```
 
 ## Usage
 
