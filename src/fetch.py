@@ -5,7 +5,6 @@ import flag
 import requests
 from requests.adapters import HTTPAdapter, Retry
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(pathname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 

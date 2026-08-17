@@ -1,7 +1,6 @@
 import logging
 from typing import Dict, List
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(pathname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -16,7 +15,7 @@ def process_fetched_holidays(response: Dict) -> List[Dict] | None:
 
     if holidays:
         processed = []
-        for i, holiday in enumerate(holidays, start=1):
+        for holiday in holidays:
             processed.append(
                 {"Name": holiday["name"], "Description": holiday["description"], "ISO": holiday["date"]["iso"],
                  "Primary type": holiday["primary_type"], "Additional type(s)": ", ".join(
