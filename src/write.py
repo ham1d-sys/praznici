@@ -3,8 +3,10 @@ import logging
 from pathlib import Path
 from typing import Dict, List
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(pathname)s - %(message)s")
 logger = logging.getLogger(__name__)
-reports_dir_path = Path(__file__).resolve().parent.parent / "reports"
+cwd = Path.cwd()
+reports_dir_path = cwd.parent / "reports"
 
 
 def write_holidays_to_report(params: Dict, fieldnames: List[str], processed: List[Dict]):
