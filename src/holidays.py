@@ -3,7 +3,7 @@ Generate report of 🇧🇬 Holidays for current year using the Calendarific API
 Calendarific documentation: https://calendarific.com/api-documentation.
 """
 
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 
 import datetime as dt
 import logging

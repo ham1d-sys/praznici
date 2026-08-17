@@ -7,11 +7,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## [1.0.5] - 2026-08-17
+
+### Fixed
+- Removed dead `raise ...` line in `test_process_fetched_holidays()` in `test_process.py`
+
 ## [1.0.4] - 2026-08-17
 
 ### Added
 
-- Test process_fetched_holidays () handles malformed response JSON
+- Test `process_fetched_holidays()` handles malformed response JSON
 
 ## [1.0.3] - 2026-08-17
 
