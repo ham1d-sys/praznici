@@ -61,7 +61,8 @@ def main():
                 f"It seems no holidays matched your parameters. Try tweaking it to match the docs: {DOCUMENTATION}")
             return
     except KeyError as e:
-        logger.warning(f"Error: {e}. Try making sure the right ENDPOINT_URL is https://calendarific.com/api/v2/holidays.")
+        logger.warning(
+            f"Error: {e}. Try making sure the right ENDPOINT_URL is https://calendarific.com/api/v2/holidays.")
         return
 
     # Write

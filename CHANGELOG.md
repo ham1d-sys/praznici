@@ -11,7 +11,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Test process_fetched_holidays() handles malformed response JSON
+- Test process_fetched_holidays () handles malformed response JSON
 
 ## [1.0.3] - 2026-08-17
 
