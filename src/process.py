@@ -11,6 +11,9 @@ def process_fetched_holidays(response: Dict) -> List[Dict] | None:
     :return:
         List of dictionaries containing holidays or None if no holidays.
     """
+    if "response" not in response:
+        raise KeyError("Malformed response JSON.")
+
     holidays = response["response"].get("holidays")
 
     if holidays:

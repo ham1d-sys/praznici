@@ -3,7 +3,7 @@ Generate report of 🇧🇬 Holidays for current year using the Calendarific API
 Calendarific documentation: https://calendarific.com/api-documentation.
 """
 
-__version__ = "1.0.3"
+__version__ = "1.0.4"
 
 import datetime as dt
 import logging
@@ -60,8 +60,8 @@ def main():
             logger.info(
                 f"It seems no holidays matched your parameters. Try tweaking it to match the docs: {DOCUMENTATION}")
             return
-    except KeyError:
-        logger.warning(f"Error: Malformed response JSON. Try making sure the right ENDPOINT_URL is https://calendarific.com/api/v2/holidays.")
+    except KeyError as e:
+        logger.warning(f"Error: {e}. Try making sure the right ENDPOINT_URL is https://calendarific.com/api/v2/holidays.")
         return
 
     # Write

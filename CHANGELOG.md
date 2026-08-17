@@ -7,6 +7,12 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+## [1.0.4] - 2026-08-17
+
+### Added
+
+- Test process_fetched_holidays() handles malformed response JSON
+
 ## [1.0.3] - 2026-08-17
 
 ### Added
@@ -20,8 +26,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
-- Changed report saving to use a path relative to the script's location instead of the current working directory, preventing reports from potentially being saved outside `praznici/`.
-
+- Changed report saving to use a path relative to the script's location instead of the current working directory,
+  preventing reports from potentially being saved outside `praznici/`.
 
 ## [1.0.2] - 2026-08-16
 
